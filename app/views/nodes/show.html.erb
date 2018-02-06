@@ -1,0 +1,22 @@
+<div>
+  <% @node.ancestors.each do |node| %>
+    <%= link_to node.name, node %> &gt;
+  <% end %>
+</div>
+
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @node.name %>
+</p>
+
+<p>
+  <strong>Ancestry:</strong>
+  <%= @node.ancestry %>
+</p>
+
+<%= link_to 'Edit', edit_node_path(@node) %> |
+<%= link_to 'Delete', @node, method: :delete, data: { confirm: 'Are you sure?' } %> |
+<%= link_to 'Add children nodes', new_node_path %> |
+<%= link_to 'Back', nodes_path %>

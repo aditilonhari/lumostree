@@ -1,0 +1,8 @@
+<ul>
+  <% nodes.each do |node, children| %>
+    <li>
+      <%= link_to node.name, node %>
+      <%= render 'subnodes', nodes: children if children.present? %>
+    </li>
+  <% end %>
+</ul>
